@@ -64,7 +64,7 @@ export const config: TemplateConfig = {
       // "c_relatedServices.primaryPhoto",
       // "c_relatedServices.id",
       "primaryPhoto",
-      "logo",
+      "c_photo",
       // "c_relatedPromotions.name",
       // "c_relatedPromotions.id",
       // "c_relatedPromotions.shortDescriptionV2",
@@ -166,7 +166,7 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
     c_secondaryCTA,
     // c_tertiaryCTA,
     photoGallery, primaryPhoto,
-    logo,
+    c_photo,
     // c_relatedServices,
     // c_relatedFAQs,
   } = document;
@@ -226,28 +226,18 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
   return (
     <>
       <Schema document={_data} />
-      {/* Top Account Bar */}
-      <nav aria-label="Account" className="bg-[#043b76] text-white py-3">
-        <div className="w-full md:container mx-auto flex justify-end">
-          <a
-            href="#"
-            className="text-sm font-semibold px-4 py-2 bg-[#043b76] hover:bg-blue-500 rounded"
-          >
-            Account
-          </a>
-        </div>
-      </nav>
+      
 
       {/* Main Header */}
       <header
-        className="bg-white text-primary p-6 font-semibold"
+        className="bg-[#862633] text-white p-6 font-semibold"
         aria-label="Main"
       >
         <div className="mx-auto md:flex justify-between items-center hidden">
           <a href="#">
             <img
-              src="https://handandstone.com/wp-content/uploads/2022/11/HS_Logo.png"
-              alt="Hand & Stone Logo"
+              src="https://jiffylube-assets1.imgix.net/img/jiffy-lube.svg?auto=format%2Ccompress&fit=max&ixlib=react-9.2.0&h=32&dpr=1&q=75"
+              alt="N Keystone Ave"
               className="h-10 w-auto"
             />
           </a>
@@ -258,7 +248,7 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
                   href="https://handandstone.com/massage/swedish-massage/"
                   className="text-xl hover:underline"
                 >
-                  Spa Services
+                  Get an Estimate
                 </a>
               </li>
               <li>
@@ -266,7 +256,7 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
                   href="https://handandstone.com/locations/"
                   className="text-xl hover:underline"
                 >
-                  Locations
+                  Services
                 </a>
               </li>
               <li>
@@ -274,7 +264,7 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
                   href="https://handandstone.com/memberships/"
                   className="text-xl hover:underline"
                 >
-                  Membership
+                  Coupons & Offers
                 </a>
               </li>
               <li>
@@ -282,7 +272,7 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
                   href="https://handandstone.com/memberships/"
                   className="text-xl hover:underline"
                 >
-                  Gift Cards
+                  Tips In A Jiffy
                 </a>
               </li>
               <li>
@@ -290,7 +280,7 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
                   href="https://handandstone.com/memberships/"
                   className="text-xl hover:underline"
                 >
-                  Careers
+                  Contact Us
                 </a>
               </li>
               <li>
@@ -298,20 +288,19 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
                   href="https://handandstone.com/memberships/"
                   className="text-xl hover:underline"
                 >
-                  Own a Franchise
                 </a>
               </li>
               <li>
                 <a
                   href="https://handandstone.com/book-an-appointment/"
-                  className="text-xl cta2-primarybg hover:underline !inline !font-semibold"
+                  className="text-white cta2-white hover:underline !inline !font-semibold"
                 >
-                  Book an Appointment
+                  Sign in / Create Account
                 </a>
               </li>
               <li>
                 <BsSearch
-                  className="!inline w-6 h-6 ml-6 font-semibold"
+                  className="!inline w-6 h-6 ml-6 font-semibold text-white"
                   aria-label="Search Icon"
                 />
               </li>
@@ -320,9 +309,144 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
         </div>
       </header>
 
+     
+     
+
+{/* Top Account Bar */}
+{/* <nav aria-label="Account" className="bg-[#862633] text-white py-2">
+
+<div className="w-full md:container mx-auto flex justify-end">
+  <a
+    href="https://www.jiffylube.com/locations/in/indianapolis/3328#"
+    className="text-xl font-semibold px-4 py-2 bg-[#862633] text-white rounded transition-colors duration-300 border-2 border-transparent"
+    style={{
+      '--hover-bg-color': '#FFFFFF',      // Hover background color
+      '--hover-border-color': '#FF5733',  // Hover border color
+      '--hover-text-color': '#333333'     // Hover text color
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.backgroundColor = 'var(--hover-bg-color)';
+      e.currentTarget.style.borderColor = 'var(--hover-border-color)';
+      e.currentTarget.style.color = 'var(--hover-text-color)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.backgroundColor = '#862633';
+      e.currentTarget.style.borderColor = 'transparent';
+      e.currentTarget.style.color = '#FFFFFF';  // Reset to original text color
+    }}
+  >
+    Sign in / Create Account
+  </a>
+</div>
+
+
+        {<div className="w-full md:container mx-auto flex justify-start">
+          <a
+            href="https://www.jiffylube.com/vehicle/preferred-location"
+            className="text-xl font-semibold px-4 py-2 bg-[#862633] text-white rounded transition-colors duration-300 border-2 border-transparent"
+            style={{
+              '--hover-bg-color': '#FFFFFF',      // Hover background color
+              '--hover-border-color': '#FF5733',  // Hover border color
+              '--hover-text-color': '#333333'     // Hover text color
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--hover-bg-color)';
+              e.currentTarget.style.borderColor = 'var(--hover-border-color)';
+              e.currentTarget.style.color = 'var(--hover-text-color)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#862633';
+              e.currentTarget.style.borderColor = 'transparent';
+              e.currentTarget.style.color = '#FFFFFF';  // Reset to original text color
+            }}
+          >
+            Register a Vehicle
+          </a>
+        </div> }
+        
+        
+      </nav> */}
+      
+
+      <nav aria-label="Account" className="bg-[#862633] text-white py-2">
+  <div className="w-full md:container mx-auto flex justify justify-between space-x-4">
+    <a
+      href="https://www.jiffylube.com/locations/in/indianapolis/3328#"
+      className="text-xl font-semibold px-4 py-2 bg-[#862633] text-white rounded transition-colors duration-300 border-2 border-transparent"
+      style={{
+        '--hover-bg-color': '#FFFFFF',      // Hover background color
+        '--hover-border-color': '#FF5733',  // Hover border color
+        '--hover-text-color': '#333333'     // Hover text color
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = 'var(--hover-bg-color)';
+        e.currentTarget.style.borderColor = 'var(--hover-border-color)';
+        e.currentTarget.style.color = 'var(--hover-text-color)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = '#862633';
+        e.currentTarget.style.borderColor = 'transparent';
+        e.currentTarget.style.color = '#FFFFFF';  // Reset to original text color
+      }}
+    >
+      Sign in / Create Account
+    </a>
+
+    <a
+      href="https://www.jiffylube.com/vehicle/preferred-location"
+      className="text-xl font-semibold px-4 py-2 bg-[#862633] text-white rounded transition-colors duration-300 border-2 border-transparent"
+      style={{
+        '--hover-bg-color': '#FFFFFF',      // Hover background color
+        '--hover-border-color': '#FF5733',  // Hover border color
+        '--hover-text-color': '#333333'     // Hover text color
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = 'var(--hover-bg-color)';
+        e.currentTarget.style.borderColor = 'var(--hover-border-color)';
+        e.currentTarget.style.color = 'var(--hover-text-color)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = '#862633';
+        e.currentTarget.style.borderColor = 'transparent';
+        e.currentTarget.style.color = '#FFFFFF';  // Reset to original text color
+      }}
+    >
+      Register a Vehicle
+    </a>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+     
       {/* Hero Section */}
       <section
-        className="relative bg-primary text-white"
+        className="relative bg-[#862633] text-white"
         aria-labelledby="hero-heading"
       >
         <div className="mx-auto flex flex-col-reverse md:flex-row-reverse">
@@ -357,23 +481,35 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
                   <Cta cta={c_primaryCTA} className="cta1-primarybg" />
                   <Cta cta={c_secondaryCTA} className="cta1-primarybg" />
                 </div>}
-                <div className="flex gap-8 mb-4">
+                {/* <div className="flex gap-8 mb-4">
                   <BsFacebook className="h-8 w-8" aria-hidden="true" />
                   <BsTwitter className="h-8 w-8" aria-hidden="true" />
                   <BsInstagram className="h-8 w-8" aria-hidden="true" />
                   <BsLinkedin className="h-8 w-8" aria-hidden="true" />
                   <BsYoutube className="h-8 w-8" aria-hidden="true" />
                   <BsTiktok className="h-8 w-8" aria-hidden="true" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
           <div className="relative lg:-mr-8 xl:absolute xl:inset-0 w-full md:w-1/2">
-            <Image image={logo} className="!h-full !w-full !max-w-none" />
+            <Image image={c_photo} className="!h-full !w-full !max-w-none" />
           </div>
         </div>
       </section>
 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       {/* Welcome Section */}
       <section
         className="mx-auto p-12 gap-28 flex flex-col md:flex-row justify-between w-full text-primary py-16"
@@ -381,12 +517,9 @@ const Location: Template<TemplateRenderProps> = ({ relativePrefixToRoot, path, d
       >
         <div className="w-full md:w-1/2">
           <h2 id="welcome-heading" className="text-5xl font-bold mb-6">
-            <span className="text-3xl">Welcome</span>
+            <span className="text-3xl">About Jiffy Lube {address.city}, {" "} {address.region} </span>
             <br />
-            <span className="font-playFair">
-              Hand & Stone Massage and Facial Spa in {address.city},{" "}
-              {address.region}
-            </span>
+            
           </h2>
           <p className="text-xl mb-4">{description}</p>
         </div>
